@@ -18,6 +18,7 @@
 		B4DB5BFC24450B5E003764B6 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BFA24450B5E003764B6 /* Preview.swift */; };
 		B4DB5BFF24450B66003764B6 /* ButtonTrayViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BFD24450B65003764B6 /* ButtonTrayViewPreview.swift */; };
 		B4DB5C0024450B66003764B6 /* ModalTextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */; };
+		B4DB5C0324450CA0003764B6 /* BDSwiftility in Frameworks */ = {isa = PBXBuildFile; productRef = B4DB5C0224450CA0003764B6 /* BDSwiftility */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B4DB5BFA24450B5E003764B6 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		B4DB5BFD24450B65003764B6 /* ButtonTrayViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTrayViewPreview.swift; sourceTree = "<group>"; };
 		B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextFieldPreview.swift; sourceTree = "<group>"; };
+		B4DB5C0124450C95003764B6 /* BDSwiftility */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BDSwiftility; path = ../BDSwiftility; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DB5C0324450CA0003764B6 /* BDSwiftility in Frameworks */,
 				B4DB5BF624450ADF003764B6 /* BDUIKnit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +54,7 @@
 		B4DB5BD324450A49003764B6 = {
 			isa = PBXGroup;
 			children = (
+				B4DB5C0124450C95003764B6 /* BDSwiftility */,
 				B4DB5BF324450ACD003764B6 /* BDUIKnit */,
 				B4DB5BDE24450A49003764B6 /* BDProjects */,
 				B4DB5BDD24450A49003764B6 /* Products */,
@@ -133,6 +137,7 @@
 			name = BDProjects;
 			packageProductDependencies = (
 				B4DB5BF524450ADF003764B6 /* BDUIKnit */,
+				B4DB5C0224450CA0003764B6 /* BDSwiftility */,
 			);
 			productName = BDProjects;
 			productReference = B4DB5BDC24450A49003764B6 /* BDProjects.app */;
@@ -394,6 +399,10 @@
 		B4DB5BF524450ADF003764B6 /* BDUIKnit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BDUIKnit;
+		};
+		B4DB5C0224450CA0003764B6 /* BDSwiftility */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDSwiftility;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
