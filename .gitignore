@@ -1,0 +1,6 @@
+/BDUIKnit
+/BDSwiftility
+*.xcuserstate
+*.xcuserdatad
+*.DS_Store
+.swiftpm
