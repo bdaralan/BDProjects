@@ -15,6 +15,10 @@ enum Preview: String, CaseIterable {
     
     case BDModalTextField
     
+    var name: String {
+        rawValue
+    }
+    
     var content: some View {
         switch self {
         case .BDButtonTrayView: return AnyView(ButtonTrayViewPreview())

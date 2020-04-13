@@ -16,19 +16,15 @@ struct ContentView: View {
     
     let presenter = PreviewPresenter()
     
-    let previews = Preview.allCases.sorted(by: { $0.rawValue < $1.rawValue })
-    
-    let header = Text("PREVIEWS")
-    
-    let footer = Text("Open App Switcher to dismiss the preview.")
+    let previews = Preview.allCases.sorted(by: { $0.name < $1.name })
     
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: self.header.padding(.top, 24), footer: self.footer) {
-                    ForEach(previews, id: \.rawValue) { preview in
-                        Button(preview.rawValue) {
+                Section(header: headerBDUIKnit, footer: footerBDUIKnit) {
+                    ForEach(previews, id: \.name) { preview in
+                        Button(preview.name) {
                             self.presenter.present(preview)
                         }
                         .accentColor(.primary)
@@ -36,13 +32,30 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("BDUIKnitProject Previews", displayMode: .inline)
+            .navigationBarTitle("BDProjects", displayMode: .inline)
             .overlay(presenter.opacity(0))
-            .onReceive(appWillActive, perform: { active in
-                guard !active else { return }
-                self.presenter.dismissPreview()
-            })
+            .onReceive(appWillActive, perform: handleAppWillActive)
         }
+    }
+}
+
+
+extension ContentView {
+    
+    var headerBDUIKnit: some View {
+        Text("BDUIKnit Previews")
+            .font(Font.system(.body, design: .monospaced))
+            .padding(.top, 24)
+    }
+    
+    var footerBDUIKnit: some View {
+        Text("Some previews are presented in fullscreen to demo their use cases and take screenshots. Since previews are self-contained, a way to dismiss is not embedded. To dismiss the preview, invoke the App Switcher. 😅")
+            .font(Font.system(.callout, design: .monospaced))
+    }
+    
+    func handleAppWillActive(_ active: Bool) {
+        guard !active else { return }
+        presenter.dismissPreview()
     }
 }
 
