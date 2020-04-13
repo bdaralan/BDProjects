@@ -4,8 +4,8 @@ This project acts as a source for all sample codes of **BD** Swift Package Manag
 
 ## Projects
 
-- [BDSwftility][BDSwftility]
+- [BDSwiftility][BDSwiftility]
 - [BDUIKnit][BDUIKnit]
 
 [BDUIKnit]: https://github.com/iDara09/BDUIKnit
-[BDSwftility]: https://github.com/iDara09/BDSwftility
+[BDSwiftility]: https://github.com/iDara09/BDSwiftility
