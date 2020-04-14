@@ -14,7 +14,6 @@ struct ButtonTrayViewPreview: View {
     
     let trayViewModel = BDButtonTrayViewModel()
     
-    @State private var navigationTitle: String?
     
     var body: some View {
         NavigationView {
@@ -30,17 +29,14 @@ struct ButtonTrayViewPreview: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 16)
             }
-            .navigationBarTitle(navigationTitle ?? "BDButtonTray")
+            .navigationBarTitle("BDButtonTray")
             .overlay(BDButtonTrayView(viewModel: trayViewModel).padding(20), alignment: .bottomTrailing)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: setupOnAppear)
-        .onReceive(trayViewModel.$subitems, perform: { items in
-            self.navigationTitle = items.isEmpty ? nil : "Subitems"
-        })
+        .onAppear(perform: setupTrayViewModel)
     }
     
-    func setupOnAppear() {
+    func setupTrayViewModel() {
         trayViewModel.items = createTrayItems()
         
         trayViewModel.action = {
@@ -48,7 +44,7 @@ struct ButtonTrayViewPreview: View {
         }
         
         trayViewModel.onTrayWillExpand = { willExpand in
-            self.navigationTitle = willExpand ? "Expanded" : nil
+            print("willExpand", willExpand)
         }
         
         trayViewModel.buttonSystemImage = "plus"
@@ -66,7 +62,6 @@ struct ButtonTrayViewPreview: View {
         
         let sort = BDButtonTrayItem(title: "Sort", systemImage: "arrow.up.arrow.down.circle") { item in
             self.trayViewModel.subitems = self.createTraySortBySubitems()
-            self.navigationTitle = "Subitems"
         }
         
         let photo = BDButtonTrayItem(title: "Example of Disabled Item", systemImage: "photo.on.rectangle") { item in
@@ -110,10 +105,24 @@ struct ButtonTrayViewPreview: View {
 struct ButtonTrayViewPreview_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ButtonTrayViewPreview().colorScheme(.light)
-            ButtonTrayViewPreview().colorScheme(.dark)
-            ButtonTrayViewPreview().environment(\.layoutDirection, .rightToLeft)
-            ButtonTrayViewPreview().environment(\.verticalSizeClass, .compact)
+            ButtonTrayViewPreview().environment(\.colorScheme, .light)
+            
+            ButtonTrayViewPreview().environment(\.colorScheme, .dark)
+            
+            ButtonTrayViewPreview()
+                .previewDisplayName("Vertical Compact Layout")
+                .previewLayout(PreviewLayout.fixed(width: 600, height: 500))
+                .environment(\.verticalSizeClass, .compact)
+            
+            ButtonTrayViewPreview()
+                .previewDisplayName("Right to Left Layout")
+                .environment(\.layoutDirection, .rightToLeft)
+            
+            ButtonTrayViewPreview()
+                .previewDisplayName("RL Vertical Compact Layout")
+                .previewLayout(PreviewLayout.fixed(width: 600, height: 500))
+                .environment(\.layoutDirection, .rightToLeft)
+                .environment(\.verticalSizeClass, .compact)
         }
     }
 }

@@ -19,6 +19,7 @@
 		B4DB5BFF24450B66003764B6 /* ButtonTrayViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BFD24450B65003764B6 /* ButtonTrayViewPreview.swift */; };
 		B4DB5C0024450B66003764B6 /* ModalTextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */; };
 		B4DB5C0324450CA0003764B6 /* BDSwiftility in Frameworks */ = {isa = PBXBuildFile; productRef = B4DB5C0224450CA0003764B6 /* BDSwiftility */; };
+		B4DB5C2924454E32003764B6 /* PresentationSheetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5C2824454E32003764B6 /* PresentationSheetPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B4DB5BFD24450B65003764B6 /* ButtonTrayViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTrayViewPreview.swift; sourceTree = "<group>"; };
 		B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextFieldPreview.swift; sourceTree = "<group>"; };
 		B4DB5C0124450C95003764B6 /* BDSwiftility */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BDSwiftility; path = ../BDSwiftility; sourceTree = "<group>"; };
+		B4DB5C2824454E32003764B6 /* PresentationSheetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationSheetPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +78,9 @@
 				B4DB5BDF24450A49003764B6 /* AppDelegate.swift */,
 				B4DB5BE124450A49003764B6 /* SceneDelegate.swift */,
 				B4DB5BE324450A49003764B6 /* ContentView.swift */,
+				B4DB5C2724454E0D003764B6 /* BDSwiftility Preview */,
 				B4DB5BF824450B3E003764B6 /* BDUIKnit Preview */,
-				B4DB5BF724450B36003764B6 /* BDUIKnit Utility */,
+				B4DB5BF724450B36003764B6 /* Utility */,
 				B4DB5BE524450A4A003764B6 /* Assets.xcassets */,
 				B4DB5BEA24450A4A003764B6 /* LaunchScreen.storyboard */,
 				B4DB5BED24450A4A003764B6 /* Info.plist */,
@@ -101,13 +104,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B4DB5BF724450B36003764B6 /* BDUIKnit Utility */ = {
+		B4DB5BF724450B36003764B6 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				B4DB5BFA24450B5E003764B6 /* Preview.swift */,
 				B4DB5BF924450B5E003764B6 /* PreviewPresenter.swift */,
 			);
-			path = "BDUIKnit Utility";
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		B4DB5BF824450B3E003764B6 /* BDUIKnit Preview */ = {
@@ -117,6 +120,14 @@
 				B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */,
 			);
 			path = "BDUIKnit Preview";
+			sourceTree = "<group>";
+		};
+		B4DB5C2724454E0D003764B6 /* BDSwiftility Preview */ = {
+			isa = PBXGroup;
+			children = (
+				B4DB5C2824454E32003764B6 /* PresentationSheetPreview.swift */,
+			);
+			path = "BDSwiftility Preview";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				B4DB5BE424450A49003764B6 /* ContentView.swift in Sources */,
 				B4DB5BFB24450B5E003764B6 /* PreviewPresenter.swift in Sources */,
 				B4DB5BFF24450B66003764B6 /* ButtonTrayViewPreview.swift in Sources */,
+				B4DB5C2924454E32003764B6 /* PresentationSheetPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

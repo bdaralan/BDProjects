@@ -16,7 +16,11 @@ struct ModalTextFieldPreview: View {
     @State private var presentSheet = false
     @State private var presentWithKeyboard = true
     
-    let colors: [String: UIColor] = ["Purple": .systemPurple, "Blue": .systemBlue, "Orange": .systemOrange]
+    let colors: [String: UIColor] = [
+        "Purple": .systemPurple,
+        "Blue": .systemBlue,
+        "Orange": .systemOrange
+    ]
     
     
     var body: some View {
