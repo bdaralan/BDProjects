@@ -23,6 +23,11 @@ struct ModalTextViewPreview: View {
             
             Toggle("Editable", isOn: $textViewModel.isEditable)
             
+            Button("Random Title Color") {
+                self.textViewModel.titleColor = .random()
+            }
+            .accentColor(textViewModel.titleColor ?? .primary)
+            
             Section(header: Text("TEXT VIEW")) {
                 Button(action: presentModalTextView) {
                     Text(textViewModel.text)
