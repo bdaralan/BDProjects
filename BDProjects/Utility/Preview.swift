@@ -25,6 +25,8 @@ enum UIKnitPreview: String, CaseIterable, Preview {
     
     case BDModalTextField
     
+    case BDModalTextView
+    
     var name: String {
         rawValue
     }
@@ -33,6 +35,7 @@ enum UIKnitPreview: String, CaseIterable, Preview {
         switch self {
         case .BDButtonTrayView: return AnyView(ButtonTrayViewPreview())
         case .BDModalTextField: return AnyView(ModalTextFieldPreview())
+        case .BDModalTextView: return AnyView(ModalTextViewPreview())
         }
     }
     
@@ -40,6 +43,7 @@ enum UIKnitPreview: String, CaseIterable, Preview {
         switch self {
         case .BDButtonTrayView: return true
         case .BDModalTextField: return false
+        case .BDModalTextView: return false
         }
     }
 }

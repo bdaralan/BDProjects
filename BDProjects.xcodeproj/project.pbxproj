@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B426868D24468EB600E6D0A8 /* ModalTextViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */; };
 		B4DB5BE024450A49003764B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BDF24450A49003764B6 /* AppDelegate.swift */; };
 		B4DB5BE224450A49003764B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BE124450A49003764B6 /* SceneDelegate.swift */; };
 		B4DB5BE424450A49003764B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BE324450A49003764B6 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTextViewPreview.swift; sourceTree = "<group>"; };
 		B4DB5BDC24450A49003764B6 /* BDProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DB5BDF24450A49003764B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DB5BE124450A49003764B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				B4DB5BFD24450B65003764B6 /* ButtonTrayViewPreview.swift */,
 				B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */,
+				B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */,
 			);
 			path = "BDUIKnit Preview";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				B4DB5BE024450A49003764B6 /* AppDelegate.swift in Sources */,
 				B4DB5BE224450A49003764B6 /* SceneDelegate.swift in Sources */,
+				B426868D24468EB600E6D0A8 /* ModalTextViewPreview.swift in Sources */,
 				B4DB5BFC24450B5E003764B6 /* Preview.swift in Sources */,
 				B4DB5C0024450B66003764B6 /* ModalTextFieldPreview.swift in Sources */,
 				B4DB5BE424450A49003764B6 /* ContentView.swift in Sources */,
