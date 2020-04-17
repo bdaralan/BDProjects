@@ -28,7 +28,7 @@ struct PresentationSheetPreview: View {
         }
     }
     
-    @State private var sheet = BDPresentationSheet<Sheet>()
+    @State private var sheet = BDPresentationItem<Sheet>()
 
     var currentSheet: String {
         sheet.current == nil ? "nil" : "\(sheet.current!)"
@@ -41,18 +41,30 @@ struct PresentationSheetPreview: View {
     
     var body: some View {
         Form {
-            Text("Current Sheet: \(currentSheet)")
-                .foregroundColor(sheet.current?.color)
-            
-            Text("Previous Sheet: \(previousSheet)")
-                .foregroundColor(sheet.previous?.color)
+            Section {
+                Text("Current Sheet: \(currentSheet)")
+                    .foregroundColor(sheet.current?.color)
+                
+                Text("Previous Sheet: \(previousSheet)")
+                    .foregroundColor(sheet.previous?.color)
+            }
             
             Button("Present Purple Sheet") {
                 self.sheet.current = .purple
             }
+            .accentColor(.purple)
             
             Button("Present Red Sheet") {
                 self.sheet.present(.red)
+            }
+            .accentColor(.red)
+            
+            Button("Reset Previous") {
+                self.sheet.resetPrevious()
+            }
+            
+            Button("Reset All") {
+                self.sheet = .init()
             }
         }
         .sheet(item: $sheet.current, onDismiss: handleSheetDismissed, content: presentationSheet)
