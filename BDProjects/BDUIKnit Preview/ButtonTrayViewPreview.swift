@@ -37,17 +37,20 @@ struct ButtonTrayViewPreview: View {
     }
     
     func setupTrayViewModel() {
+        trayViewModel.mainItem = createTrayMainItem()
         trayViewModel.items = createTrayItems()
         
         trayViewModel.onTrayWillExpand = { willExpand in
             print("willExpand", willExpand)
         }
         
-        trayViewModel.mainItem = .init(title: "", systemImage: "plus") { item in
+        trayViewModel.expanded = true
+    }
+    
+    func createTrayMainItem() -> BDButtonTrayItem {
+        BDButtonTrayItem(title: "", systemImage: "plus") { item in
             print("main item triggered")
         }
-        
-        trayViewModel.expanded = true
     }
     
     func createTrayItems() -> [BDButtonTrayItem] {
