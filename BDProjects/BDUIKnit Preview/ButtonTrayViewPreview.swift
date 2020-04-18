@@ -39,15 +39,14 @@ struct ButtonTrayViewPreview: View {
     func setupTrayViewModel() {
         trayViewModel.items = createTrayItems()
         
-        trayViewModel.action = {
-            print("main button triggered")
-        }
-        
         trayViewModel.onTrayWillExpand = { willExpand in
             print("willExpand", willExpand)
         }
         
-        trayViewModel.buttonSystemImage = "plus"
+        trayViewModel.mainItem = .init(title: "", systemImage: "plus") { item in
+            print("main item triggered")
+        }
+        
         trayViewModel.expanded = true
     }
     
@@ -70,14 +69,21 @@ struct ButtonTrayViewPreview: View {
         
         photo.disabled = true
         
+        let circles = BDButtonTrayItem(title: "Independent Color", systemImage: "circle.grid.hex") { item in
+            item.activeColor = .random()
+        }
+        
+        circles.activeColor = .purple
+        
         let eyeDropper = BDButtonTrayItem(title: "Example of applyChanges()", systemImage: "eyedropper") { item in
-            self.trayViewModel.itemActiveColor = .random()
-            self.trayViewModel.subitemActiveColor = .random()
-            self.trayViewModel.buttonActiveColor = .random()
+            let randomColor = Color.random()
+            self.trayViewModel.itemActiveColor = randomColor
+            self.trayViewModel.subitemActiveColor = randomColor
+            self.trayViewModel.mainItem.activeColor = randomColor
             self.trayViewModel.applyChanges()
         }
         
-        return [newFolder, folder, sort, photo, eyeDropper]
+        return [newFolder, folder, sort, photo, circles, eyeDropper]
     }
     
     func createTraySortBySubitems() -> [BDButtonTrayItem] {
