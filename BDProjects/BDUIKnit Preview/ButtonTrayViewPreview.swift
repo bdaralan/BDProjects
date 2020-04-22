@@ -14,6 +14,8 @@ struct ButtonTrayViewPreview: View {
     
     let trayViewModel = BDButtonTrayViewModel()
     
+    @State private var navigationTitle = "BDButtonTray"
+    
     
     var body: some View {
         NavigationView {
@@ -29,7 +31,7 @@ struct ButtonTrayViewPreview: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 16)
             }
-            .navigationBarTitle("BDButtonTray")
+            .navigationBarTitle(navigationTitle)
             .overlay(BDButtonTrayView(viewModel: trayViewModel).padding(20), alignment: .bottomTrailing)
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -41,7 +43,11 @@ struct ButtonTrayViewPreview: View {
         trayViewModel.items = createTrayItems()
         
         trayViewModel.onTrayWillExpand = { willExpand in
-            print("willExpand", willExpand)
+            if willExpand {
+                self.navigationTitle = "Expanded"
+            } else {
+                self.navigationTitle = "BDButtonTray"
+            }
         }
         
         trayViewModel.expanded = true
@@ -63,6 +69,7 @@ struct ButtonTrayViewPreview: View {
         }
         
         let sort = BDButtonTrayItem(title: "Sort", systemImage: "arrow.up.arrow.down.circle") { item in
+            self.navigationTitle = "Subitems"
             self.trayViewModel.subitems = self.createTraySortBySubitems()
         }
         
