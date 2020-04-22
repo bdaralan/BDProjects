@@ -69,7 +69,7 @@ extension ContentView {
     }
     
     var messageText: some View {
-        Text("Some previews are presented in fullscreen to demo their use cases and take screenshots. Since previews are self-contained view, a way to dismiss is not implenented. To dismiss fullscreen preview, invoke the App Switcher. 😅")
+        Text("Some previews are presented in fullscreen to demo their use cases and take screenshots. Since previews are self-contained, a way to dismiss is not implemented. To dismiss fullscreen preview, invoke the App Switcher or Notification Center. 😅")
             .font(Font.system(.callout, design: .monospaced))
             .padding(.vertical)
             .multilineTextAlignment(.center)

@@ -14,7 +14,7 @@ struct PresentationSheetPreview: View {
     
     enum Sheet: Identifiable {
         
-        var id: Self { self }
+        var id: Self { self } // can remove this if conforms to `BDPresentationSheetItem`
         
         case purple
         
