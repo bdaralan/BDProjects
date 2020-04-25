@@ -12,6 +12,8 @@ import BDUIKnit
 
 struct ModalTextFieldPreview: View {
     
+    @State private var todo = Todo()
+    
     @State private var textFieldModel = BDModalTextFieldModel()
     @State private var presentSheet = false
     @State private var presentWithKeyboard = true
@@ -29,7 +31,7 @@ struct ModalTextFieldPreview: View {
                 HStack {
                     Text("Show Text Field")
                     Spacer()
-                    Text(textFieldModel.text)
+                    Text(todo.title)
                 }
                 .foregroundColor(.primary)
             }
@@ -47,17 +49,25 @@ struct ModalTextFieldPreview: View {
         textFieldModel.placeholder = "Placeholder"
         textFieldModel.tokens = colors.keys.map({ $0 })
         
+        // assign the text to the text field's text before present
+        textFieldModel.text = todo.title
+        
         textFieldModel.onCancel = {
+            // ignore to update and dismiss
             self.textFieldModel.isFirstResponder = false
             self.presentSheet = false
         }
         
         textFieldModel.onCommit = {
+            // grab the text from the text field and dismiss
+            self.todo.title = self.textFieldModel.text
             self.textFieldModel.isFirstResponder = false
             self.presentSheet = false
         }
         
         textFieldModel.onReturnKey = {
+            // grab the text from the text field and dismiss
+            self.todo.title = self.textFieldModel.text
             self.textFieldModel.isFirstResponder = false
             self.presentSheet = false
         }

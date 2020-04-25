@@ -12,6 +12,8 @@ import BDUIKnit
 
 struct ModalTextViewPreview: View {
     
+    @State private var todo = Todo()
+    
     @State private var textViewModel = BDModalTextViewModel()
     @State private var presentSheet = false
     @State private var presentWithKeyboard = true
@@ -67,7 +69,12 @@ struct ModalTextViewPreview: View {
     func presentModalTextView() {
         textViewModel.title = "Title"
         
+        // assign the text to the text view's text before present
+        textViewModel.text = todo.note
+        
         textViewModel.onCommit = {
+            // grab the text from the text view and dismiss
+            self.todo.note = self.textViewModel.text
             self.textViewModel.isFirstResponder = false
             self.presentSheet = false
         }
