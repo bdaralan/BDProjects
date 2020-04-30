@@ -52,12 +52,6 @@ struct ModalTextFieldPreview: View {
         // assign the text to the text field's text before present
         textFieldModel.text = todo.title
         
-        textFieldModel.onCancel = {
-            // ignore to update and dismiss
-            self.textFieldModel.isFirstResponder = false
-            self.presentSheet = false
-        }
-        
         textFieldModel.onCommit = {
             // grab the text from the text field and dismiss
             self.todo.title = self.textFieldModel.text
@@ -68,6 +62,12 @@ struct ModalTextFieldPreview: View {
         textFieldModel.onReturnKey = {
             // grab the text from the text field and dismiss
             self.todo.title = self.textFieldModel.text
+            self.textFieldModel.isFirstResponder = false
+            self.presentSheet = false
+        }
+        
+        textFieldModel.onCancel = {
+            // ignore to update todo and dismiss
             self.textFieldModel.isFirstResponder = false
             self.presentSheet = false
         }

@@ -52,6 +52,7 @@ struct ContentView: View {
             .overlay(presenter.opacity(0))
             .onReceive(appWillActive, perform: handleAppWillActive)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

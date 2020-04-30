@@ -85,15 +85,14 @@ struct ButtonTrayViewPreview: View {
         
         circles.activeColor = .purple
         
-        let eyeDropper = BDButtonTrayItem(title: "Example of applyChanges()", systemImage: "eyedropper") { item in
-            let randomColor = Color.random()
-            self.trayViewModel.itemActiveColor = randomColor
-            self.trayViewModel.subitemActiveColor = randomColor
-            self.trayViewModel.mainItem.activeColor = randomColor
-            self.trayViewModel.applyChanges()
+        let lock = BDButtonTrayItem(title: "Lock Tray", systemImage: "lock.circle") { item in
+            self.trayViewModel.locked.toggle()
+            let locked = self.trayViewModel.locked
+            item.systemImage = locked ? "lock.circle.fill" : "lock.circle"
+            item.title = locked ? "Unlock Tray" : "Lock Tray"
         }
         
-        return [newFolder, folder, sort, photo, circles, eyeDropper]
+        return [newFolder, folder, sort, photo, circles, lock]
     }
     
     func createTraySortBySubitems() -> [BDButtonTrayItem] {

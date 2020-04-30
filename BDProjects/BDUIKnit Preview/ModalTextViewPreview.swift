@@ -55,7 +55,7 @@ struct ModalTextViewPreview: View {
             
             Section(header: Text("TEXT VIEW")) {
                 Button(action: presentModalTextView) {
-                    Text(textViewModel.text)
+                    Text(todo.note)
                         .padding(.vertical)
                         .foregroundColor(.primary)
                 }
@@ -75,6 +75,12 @@ struct ModalTextViewPreview: View {
         textViewModel.onCommit = {
             // grab the text from the text view and dismiss
             self.todo.note = self.textViewModel.text
+            self.textViewModel.isFirstResponder = false
+            self.presentSheet = false
+        }
+        
+        textViewModel.onCancel = {
+            // ignore to update todo and dismiss
             self.textViewModel.isFirstResponder = false
             self.presentSheet = false
         }
