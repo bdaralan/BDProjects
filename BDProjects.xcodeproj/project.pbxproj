@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4147EEC2453C4BE0022855A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4147EEB2453C4BE0022855A /* Todo.swift */; };
 		B426868D24468EB600E6D0A8 /* ModalTextViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */; };
+		B45D386C245D032A000D4975 /* TextViewWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */; };
 		B4985919245368A600BD0225 /* TextFieldWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4985918245368A600BD0225 /* TextFieldWrapperPreview.swift */; };
 		B4DB5BE024450A49003764B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BDF24450A49003764B6 /* AppDelegate.swift */; };
 		B4DB5BE224450A49003764B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BE124450A49003764B6 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		B4147EEB2453C4BE0022855A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTextViewPreview.swift; sourceTree = "<group>"; };
+		B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapperPreview.swift; sourceTree = "<group>"; };
 		B4985918245368A600BD0225 /* TextFieldWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWrapperPreview.swift; sourceTree = "<group>"; };
 		B4DB5BDC24450A49003764B6 /* BDProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DB5BDF24450A49003764B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				B4DB5BFE24450B65003764B6 /* ModalTextFieldPreview.swift */,
 				B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */,
 				B4985918245368A600BD0225 /* TextFieldWrapperPreview.swift */,
+				B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */,
 			);
 			path = "BDUIKnit Preview";
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				B4DB5BFB24450B5E003764B6 /* PreviewPresenter.swift in Sources */,
 				B4DB5BFF24450B66003764B6 /* ButtonTrayViewPreview.swift in Sources */,
 				B4DB5C2924454E32003764B6 /* PresentationSheetPreview.swift in Sources */,
+				B45D386C245D032A000D4975 /* TextViewWrapperPreview.swift in Sources */,
 				B4985919245368A600BD0225 /* TextFieldWrapperPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

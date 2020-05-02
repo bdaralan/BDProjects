@@ -33,7 +33,10 @@ struct TextFieldWrapperPreview: View {
             
             Divider()
             
-            Text("FOR INTERNAL USER ONLY")
+            VStack {
+                Text("FOR INTERNAL USE ONLY")
+                Text("see BDTextFieldWrapper documentation")
+            }
                 .foregroundColor(.red)
                 .padding(.top)
 
