@@ -85,6 +85,12 @@ struct ButtonTrayViewPreview: View {
         
         circles.activeColor = .purple
         
+        let animate = BDButtonTrayItem(title: "Animate", systemImage: "play.circle") { item in
+            item.animated.toggle()
+            item.systemImage = item.animated ? "stop.circle" : "play.circle"
+            item.title = item.animated ? "Stop" : "Animate"
+        }
+        
         let lock = BDButtonTrayItem(title: "Lock Tray", systemImage: "lock.circle") { item in
             self.trayViewModel.locked.toggle()
             let locked = self.trayViewModel.locked
@@ -92,7 +98,7 @@ struct ButtonTrayViewPreview: View {
             item.title = locked ? "Unlock Tray" : "Lock Tray"
         }
         
-        return [newFolder, folder, sort, photo, circles, lock]
+        return [newFolder, folder, sort, photo, circles, animate, lock]
     }
     
     func createTraySortBySubitems() -> [BDButtonTrayItem] {
