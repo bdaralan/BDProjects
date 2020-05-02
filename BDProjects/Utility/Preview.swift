@@ -14,8 +14,6 @@ protocol Preview {
     var name: String { get }
     
     var content: AnyView { get }
-    
-    var fullscreen: Bool { get }
 }
 
 
@@ -31,6 +29,8 @@ enum UIKnitPreview: String, CaseIterable, Preview {
     
     case BDTextViewWrapper
     
+    case BDUIViewWrapperSegmentControl
+    
     var name: String {
         rawValue
     }
@@ -42,16 +42,7 @@ enum UIKnitPreview: String, CaseIterable, Preview {
         case .BDModalTextView: return AnyView(ModalTextViewPreview())
         case .BDTextFieldWrapper: return AnyView(TextFieldWrapperPreview())
         case .BDTextViewWrapper: return AnyView(TextViewWrapperPreview())
-        }
-    }
-    
-    var fullscreen: Bool {
-        switch self {
-        case .BDButtonTrayView: return true
-        case .BDModalTextField: return false
-        case .BDModalTextView: return false
-        case .BDTextFieldWrapper: return false
-        case .BDTextViewWrapper: return false
+        case .BDUIViewWrapperSegmentControl: return AnyView(UIViewWrapperSegmentControlPreview())
         }
     }
 }
@@ -68,12 +59,6 @@ enum SwiftilityPreview: String, CaseIterable, Preview {
     var content: AnyView {
         switch self {
         case .BDPresentationSheet: return AnyView(PresentationSheetPreview())
-        }
-    }
-    
-    var fullscreen: Bool {
-        switch self {
-        case .BDPresentationSheet: return false
         }
     }
 }

@@ -22,7 +22,7 @@ struct PreviewPresenter: UIViewControllerRepresentable {
         
     }
     
-    func present<Content: View>(content: Content, fullscreen: Bool = true) {
+    func present<Content: View>(content: Content, fullscreen: Bool) {
         let hostingVC = UIHostingController(rootView: content)
         if fullscreen {
             hostingVC.modalPresentationStyle = .fullScreen
@@ -35,8 +35,8 @@ struct PreviewPresenter: UIViewControllerRepresentable {
         controller.presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
-    func present(_ preview: Preview) {
-        present(content: preview.content, fullscreen: preview.fullscreen)
+    func present(_ preview: Preview, fullscreen: Bool) {
+        present(content: preview.content, fullscreen: fullscreen)
     }
     
     func dismissPreview() {

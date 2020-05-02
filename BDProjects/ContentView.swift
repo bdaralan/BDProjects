@@ -20,6 +20,8 @@ struct ContentView: View {
     
     let allSwiftilityPreviews = SwiftilityPreview.allCases.sorted(by: { $0.name < $1.name })
     
+    @State private var fullscreen = false
+    
     
     var body: some View {
         NavigationView {
@@ -28,10 +30,14 @@ struct ContentView: View {
                     messageText
                 }
                 
+                Section {
+                    Toggle("Present Fullscreen", isOn: $fullscreen)
+                }
+                
                 Section(header: headerBDUIKnit) {
                     ForEach(allUIKnitPreviews, id: \.name) { preview in
                         Button(preview.name) {
-                            self.presenter.present(preview)
+                            self.presenter.present(preview, fullscreen: self.fullscreen)
                         }
                         .accentColor(.primary)
                         .font(.system(.body, design: .monospaced))
@@ -41,7 +47,7 @@ struct ContentView: View {
                 Section(header: headerBDSwiftility) {
                     ForEach(allSwiftilityPreviews, id: \.name) { preview in
                         Button(preview.name) {
-                            self.presenter.present(preview)
+                            self.presenter.present(preview, fullscreen: self.fullscreen)
                         }
                         .accentColor(.primary)
                         .font(.system(.body, design: .monospaced))
