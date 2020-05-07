@@ -16,6 +16,10 @@ struct ButtonTrayViewPreview: View {
     
     @State private var navigationTitle = "BDButtonTray"
     
+    @State private var itemAnimations: [BDButtonTrayItemAnimation] = [
+        .pulse(), .rotation(), .tilt(anchor: .top)
+    ]
+    
     
     var body: some View {
         NavigationView {
@@ -85,10 +89,26 @@ struct ButtonTrayViewPreview: View {
         
         circles.activeColor = .purple
         
-        let animate = BDButtonTrayItem(title: "Animate", systemImage: "play.circle") { item in
-            item.animated.toggle()
-            item.systemImage = item.animated ? "stop.circle" : "play.circle"
-            item.title = item.animated ? "Stop" : "Animate"
+        let animate = BDButtonTrayItem(title: "Play Animations", systemImage: "play.circle") { item in
+            let animation = self.itemAnimations.removeFirst()
+            self.itemAnimations.append(animation)
+            
+            item.animation = animation
+            
+            switch animation {
+            case .pulse:
+                item.title = "Pulse"
+                item.systemImage = "heart.circle"
+                item.activeColor = .pink
+            case .rotation:
+                item.title = "Rotation"
+                item.systemImage = "arrow.2.circlepath.circle"
+                item.activeColor = nil
+            case .tilt:
+                item.title = "Tilt"
+                item.systemImage = "bell"
+                item.activeColor = .orange
+            }
         }
         
         let lock = BDButtonTrayItem(title: "Lock Tray", systemImage: "lock.circle") { item in
