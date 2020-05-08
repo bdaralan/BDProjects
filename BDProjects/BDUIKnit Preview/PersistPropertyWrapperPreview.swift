@@ -61,7 +61,7 @@ struct PersistPropertyWrapperPreview: View {
                 }
             }
         }
-        .onReceive(usernamePublisher) { notification in
+        .onReceive(usernamePublisher.receive(on: DispatchQueue.main)) { notification in
             let username = notification.object as! String
             self.notificationUsername = username
         }
