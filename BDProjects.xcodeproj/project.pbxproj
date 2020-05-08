@@ -11,6 +11,7 @@
 		B426868D24468EB600E6D0A8 /* ModalTextViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */; };
 		B45D386C245D032A000D4975 /* TextViewWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */; };
 		B45D386E245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */; };
+		B479E58F2465CC410046AA0A /* PersistPropertyWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */; };
 		B4985919245368A600BD0225 /* TextFieldWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4985918245368A600BD0225 /* TextFieldWrapperPreview.swift */; };
 		B4DB5BE024450A49003764B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BDF24450A49003764B6 /* AppDelegate.swift */; };
 		B4DB5BE224450A49003764B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB5BE124450A49003764B6 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTextViewPreview.swift; sourceTree = "<group>"; };
 		B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapperPreview.swift; sourceTree = "<group>"; };
 		B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperSegmentControlPreview.swift; sourceTree = "<group>"; };
+		B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistPropertyWrapperPreview.swift; sourceTree = "<group>"; };
 		B4985918245368A600BD0225 /* TextFieldWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWrapperPreview.swift; sourceTree = "<group>"; };
 		B4DB5BDC24450A49003764B6 /* BDProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DB5BDF24450A49003764B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				B4985918245368A600BD0225 /* TextFieldWrapperPreview.swift */,
 				B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */,
 				B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */,
+				B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */,
 			);
 			path = "BDUIKnit Preview";
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4147EEC2453C4BE0022855A /* Todo.swift in Sources */,
+				B479E58F2465CC410046AA0A /* PersistPropertyWrapperPreview.swift in Sources */,
 				B4DB5BE024450A49003764B6 /* AppDelegate.swift in Sources */,
 				B4DB5BE224450A49003764B6 /* SceneDelegate.swift in Sources */,
 				B426868D24468EB600E6D0A8 /* ModalTextViewPreview.swift in Sources */,

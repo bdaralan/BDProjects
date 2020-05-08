@@ -6,8 +6,8 @@ The project is used to demo all features and UI components of all packages. Each
 
 ## BD Swift Package Managers
 
-- [BDSwiftility][BDSwiftility]
 - [BDUIKnit][BDUIKnit]
+- ~~BDSwiftility~~ merged with [BDUIKnit][BDUIKnit]
 
 ## Run the Project
 
@@ -16,10 +16,9 @@ To try out each package's features and see how they work, run this project on a 
 - Clone this project.
 - Open the project in Xcode.
 - Go to `File > Swift Packages > Add Package Dependency...`
-- Add BDUIKnit and BDSwiftility packages.
+- Add all the packages listed above.
 - Run the project.
 
 <!-- Links -->
 
 [BDUIKnit]: https://github.com/iDara09/BDUIKnit
-[BDSwiftility]: https://github.com/iDara09/BDSwiftility

@@ -31,6 +31,8 @@ enum UIKnitPreview: String, CaseIterable, Preview {
     
     case BDUIViewWrapperSegmentControl
     
+    case BDPersistPropertyWrapper
+    
     var name: String {
         rawValue
     }
@@ -43,6 +45,7 @@ enum UIKnitPreview: String, CaseIterable, Preview {
         case .BDTextFieldWrapper: return AnyView(TextFieldWrapperPreview())
         case .BDTextViewWrapper: return AnyView(TextViewWrapperPreview())
         case .BDUIViewWrapperSegmentControl: return AnyView(UIViewWrapperSegmentControlPreview())
+        case .BDPersistPropertyWrapper: return AnyView(PersistPropertyWrapperPreview())
         }
     }
 }
