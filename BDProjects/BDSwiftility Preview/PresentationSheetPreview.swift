@@ -7,14 +7,13 @@
 //
 
 import SwiftUI
-import BDSwiftility
+import BDUIKnit
 
 
 struct PresentationSheetPreview: View {
     
-    enum Sheet: Identifiable {
-        
-        var id: Self { self } // can remove this if conforms to `BDPresentationSheetItem`
+    // conform to `BDPresentationSheetItem` or `Identifiable`
+    enum Sheet: BDPresentationSheetItem {
         
         case purple
         
@@ -28,6 +27,8 @@ struct PresentationSheetPreview: View {
         }
     }
     
+    // Don't forget to set shouldStorePrevious to true
+    // if want to keep the previous sheet
     @State private var sheet = BDPresentationItem<Sheet>()
 
     var currentSheet: String {
@@ -67,7 +68,12 @@ struct PresentationSheetPreview: View {
                 self.sheet = .init()
             }
         }
+        .onAppear(perform: setupOnAppear)
         .sheet(item: $sheet.current, onDismiss: handleSheetDismissed, content: presentationSheet)
+    }
+    
+    func setupOnAppear() {
+        sheet.shouldStorePrevious = true
     }
     
     func presentationSheet(_ sheet: Sheet) -> some View {
