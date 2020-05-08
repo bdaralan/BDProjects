@@ -12,58 +12,66 @@ import BDUIKnit
 
 struct PersistPropertyWrapperPreview: View {
     
-    class PersistObject: ObservableObject {
-        static let nUsernameDidChange = Notification.Name("nUsernameDidChange")
-        
-        @BDPersist(in: .userDefaults, key: "username", default: "", post: nUsernameDidChange)
-        var username: String
-        
-        @BDPersist(in: .userDefaults, key: "profileImageUrl", default: nil)
-        var profileImageUrl: String?
-    }
+    // For the purposes of this sample code, static is used on @BDPersist
+    // so that they can be modified in View object.
+    //
+    // Usually, these properties should be in a Settings or UserPreference object
+    
+    static let nUsernameDidChange = Notification.Name("nUsernameDidChange")
+    static let nProfileImageUrlDidChange = Notification.Name("nProfileImageUrlDidChange")
+    
+    @BDPersist(in: .userDefaults, key: "username", default: "", post: nUsernameDidChange)
+    static var username: String
+    
+    @BDPersist(in: .userDefaults, key: "profileImageUrl", default: nil, post: nProfileImageUrlDidChange)
+    static var profileImageUrl: String?
     
     @State private var textFieldUsername = ""
     @State private var notificationUsername = ""
     
     @State private var textFieldProfileImageUrl = ""
+    @State private var notificationProfileImageUrl = ""
     
-    @ObservedObject var persistObject = PersistObject()
-    
-    let usernamePublisher = NotificationCenter.default.publisher(for: PersistObject.nUsernameDidChange)
+    let usernamePublisher = NotificationCenter.default.publisher(for: nUsernameDidChange)
+    let profileImagePublisher = NotificationCenter.default.publisher(for: nProfileImageUrlDidChange)
     
     
     var body: some View {
         Form {
             Section(header: Text("NON-OPTIONAL VALUE")) {
-                Text("Persist Username: \(persistObject.username)")
+                Text("Persist Username: \(Self.username)")
                 
                 Text("Notification Username: \(notificationUsername)")
                 
                 TextField("Username", text: $textFieldUsername)
                 
                 Button("Update Username") {
-                    self.persistObject.objectWillChange.send()
-                    self.persistObject.username = self.textFieldUsername
+                    Self.username = self.textFieldUsername
                 }
             }
             
             Section(header: Text("OPTIONAL VALUE")) {
-                Text("Persist Profile Image URL: \(persistObject.profileImageUrl ?? "nil")")
+                Text("Persist Profile Image URL: \(Self.profileImageUrl ?? "nil")")
+                
+                Text("Notification Profile Image URL: \(notificationProfileImageUrl)")
                 
                 TextField("Image URL", text: $textFieldProfileImageUrl)
                     .autocapitalization(.none)
                     .keyboardType(.URL)
                 
                 Button("Update URL") {
-                    self.persistObject.objectWillChange.send()
                     let url = self.textFieldProfileImageUrl
-                    self.persistObject.profileImageUrl = url.isEmpty ? nil : url
+                    Self.profileImageUrl = url.isEmpty ? nil : url
                 }
             }
         }
         .onReceive(usernamePublisher.receive(on: DispatchQueue.main)) { notification in
-            let username = notification.object as! String
-            self.notificationUsername = username
+            let username = notification.object as? String
+            self.notificationUsername = username ?? "nil"
+        }
+        .onReceive(profileImagePublisher.receive(on: DispatchQueue.main)) { notification in
+            let url = notification.object as? String
+            self.notificationProfileImageUrl = url ?? "nil"
         }
     }
 }
