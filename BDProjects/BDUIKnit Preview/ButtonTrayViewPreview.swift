@@ -58,38 +58,38 @@ struct ButtonTrayViewPreview: View {
     }
     
     func createTrayMainItem() -> BDButtonTrayItem {
-        BDButtonTrayItem(title: "", systemImage: "plus") { item in
+        BDButtonTrayItem(title: "", image: .system("plus")) { item in
             print("main item triggered")
         }
     }
     
     func createTrayItems() -> [BDButtonTrayItem] {
-        let newFolder = BDButtonTrayItem(title: "New Folder", systemImage: "folder.badge.plus") { item in
+        let newFolder = BDButtonTrayItem(title: "New Folder", image: .system("folder.badge.plus")) { item in
             print(item.title)
         }
         
-        let folder = BDButtonTrayItem(title: "Folders", systemImage: "folder") { item in
+        let folder = BDButtonTrayItem(title: "Folders", image: .system("folder")) { item in
             print(item.title)
         }
         
-        let sort = BDButtonTrayItem(title: "Sort", systemImage: "arrow.up.arrow.down.circle") { item in
+        let sort = BDButtonTrayItem(title: "Sort", image: .system("arrow.up.arrow.down.circle")) { item in
             self.navigationTitle = "Subitems"
             self.trayViewModel.subitems = self.createTraySortBySubitems()
         }
         
-        let photo = BDButtonTrayItem(title: "Example of Disabled Item", systemImage: "photo.on.rectangle") { item in
+        let photo = BDButtonTrayItem(title: "Example of Disabled Item", image: .asset("placeholder-image")) { item in
             print(item.title)
         }
         
         photo.disabled = true
         
-        let circles = BDButtonTrayItem(title: "Independent Color", systemImage: "circle.grid.hex") { item in
+        let circles = BDButtonTrayItem(title: "Independent Color", image: .system("circle.grid.hex")) { item in
             item.activeColor = .random()
         }
         
         circles.activeColor = .purple
         
-        let animate = BDButtonTrayItem(title: "Play Animations", systemImage: "play.circle") { item in
+        let animate = BDButtonTrayItem(title: "Play Animations", image: .system("play.circle")) { item in
             let animation = self.itemAnimations.removeFirst()
             self.itemAnimations.append(animation)
             
@@ -98,23 +98,23 @@ struct ButtonTrayViewPreview: View {
             switch animation {
             case .pulse:
                 item.title = "Pulse"
-                item.systemImage = "heart.circle"
+                item.image = .system("heart.circle")
                 item.activeColor = .pink
             case .rotation:
                 item.title = "Rotation"
-                item.systemImage = "arrow.2.circlepath.circle"
+                item.image = .system("arrow.2.circlepath.circle")
                 item.activeColor = nil
             case .tilt:
                 item.title = "Tilt"
-                item.systemImage = "bell"
+                item.image = .system("bell")
                 item.activeColor = .orange
             }
         }
         
-        let lock = BDButtonTrayItem(title: "Lock Tray", systemImage: "lock.circle") { item in
+        let lock = BDButtonTrayItem(title: "Lock Tray", image: .system("lock.circle")) { item in
             self.trayViewModel.locked.toggle()
             let locked = self.trayViewModel.locked
-            item.systemImage = locked ? "lock.circle.fill" : "lock.circle"
+            item.image = .system(locked ? "lock.circle.fill" : "lock.circle")
             item.title = locked ? "Unlock Tray" : "Lock Tray"
         }
         
@@ -122,19 +122,19 @@ struct ButtonTrayViewPreview: View {
     }
     
     func createTraySortBySubitems() -> [BDButtonTrayItem] {
-        let sortByDate = BDButtonTrayItem(title: "Sort by Date", systemImage: "clock") { item in
+        let sortByDate = BDButtonTrayItem(title: "Sort by Date", image: .system("clock")) { item in
             print(item.title)
         }
         
-        let sortByName = BDButtonTrayItem(title: "Sort by Name", systemImage: "textformat") { item in
+        let sortByName = BDButtonTrayItem(title: "Sort by Name", image: .system("textformat")) { item in
             print(item.title)
         }
         
-        let sortByTag = BDButtonTrayItem(title: "Sort by Tag", systemImage: "tag") { item in
+        let sortByTag = BDButtonTrayItem(title: "Sort by Tag", image: .system("tag")) { item in
             print(item.title)
         }
         
-        let sortByFileType = BDButtonTrayItem(title: "Sort by File Type", systemImage: "doc") { item in
+        let sortByFileType = BDButtonTrayItem(title: "Sort by File Type", image: .system("doc")) { item in
             print(item.title)
         }
         
