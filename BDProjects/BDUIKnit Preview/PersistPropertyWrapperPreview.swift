@@ -20,10 +20,17 @@ struct PersistPropertyWrapperPreview: View {
     static let nUsernameDidChange = Notification.Name("nUsernameDidChange")
     static let nProfileImageUrlDidChange = Notification.Name("nProfileImageUrlDidChange")
     
-    @BDPersist(in: .userDefaults, key: "username", default: "", post: nUsernameDidChange)
+    // Note: Use string as keys or BDPersistKey for type-safe keys.
+    enum Keys: BDPersistKey {
+        var prefix: String { "some.prefix." }
+        case username
+        case profileImageUrl
+    }
+    
+    @BDPersist(in: .userDefaults, key: Keys.username, default: "", post: nUsernameDidChange)
     static var username: String
     
-    @BDPersist(in: .userDefaults, key: "profileImageUrl", default: nil, post: nProfileImageUrlDidChange)
+    @BDPersist(in: .userDefaults, key: Keys.profileImageUrl, default: nil, post: nProfileImageUrlDidChange)
     static var profileImageUrl: String?
     
     @State private var textFieldUsername = ""
