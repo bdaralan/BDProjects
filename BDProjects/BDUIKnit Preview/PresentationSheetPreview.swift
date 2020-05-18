@@ -1,5 +1,5 @@
 //
-//  PresentationSheetPreview.swift
+//  PresentationItemPreview.swift
 //  BDProjects
 //
 //  Created by Dara Beng on 4/13/20.
@@ -10,7 +10,7 @@ import SwiftUI
 import BDUIKnit
 
 
-struct PresentationSheetPreview: View {
+struct PresentationItemPreview: View {
     
     // conform to `BDPresentationSheetItem` or `Identifiable`
     enum Sheet: BDPresentationSheetItem {
@@ -103,8 +103,8 @@ struct PresentationSheetPreview: View {
 }
 
 
-struct PresentationSheet_Previews: PreviewProvider {
+struct PresentationItemPreview_Previews: PreviewProvider {
     static var previews: some View {
-        PresentationSheetPreview()
+        PresentationItemPreview()
     }
 }

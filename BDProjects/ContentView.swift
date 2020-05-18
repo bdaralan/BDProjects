@@ -18,8 +18,6 @@ struct ContentView: View {
     
     let allUIKnitPreviews = UIKnitPreview.allCases.sorted(by: { $0.name < $1.name })
     
-    let allSwiftilityPreviews = SwiftilityPreview.allCases.sorted(by: { $0.name < $1.name })
-    
     @State private var fullscreen = false
     
     
@@ -43,16 +41,6 @@ struct ContentView: View {
                         .font(.system(.body, design: .monospaced))
                     }
                 }
-                
-                Section(header: headerBDSwiftility) {
-                    ForEach(allSwiftilityPreviews, id: \.name) { preview in
-                        Button(preview.name) {
-                            self.presenter.present(preview, fullscreen: self.fullscreen)
-                        }
-                        .accentColor(.primary)
-                        .font(.system(.body, design: .monospaced))
-                    }
-                }
             }
             .navigationBarTitle("BDProjects", displayMode: .inline)
             .overlay(presenter.opacity(0))
@@ -67,11 +55,6 @@ extension ContentView {
     
     var headerBDUIKnit: some View {
         Text("BDUIKnit Previews")
-            .font(.system(.body, design: .monospaced))
-    }
-    
-    var headerBDSwiftility: some View {
-        Text("BDSwiftility Previews")
             .font(.system(.body, design: .monospaced))
     }
     

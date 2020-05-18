@@ -33,6 +33,8 @@ enum UIKnitPreview: String, CaseIterable, Preview {
     
     case BDPersistPropertyWrapper
     
+    case BDPresentationItem
+    
     var name: String {
         rawValue
     }
@@ -46,22 +48,7 @@ enum UIKnitPreview: String, CaseIterable, Preview {
         case .BDTextViewWrapper: return AnyView(TextViewWrapperPreview())
         case .BDUIViewWrapperSegmentControl: return AnyView(UIViewWrapperSegmentControlPreview())
         case .BDPersistPropertyWrapper: return AnyView(PersistPropertyWrapperPreview())
-        }
-    }
-}
-
-
-enum SwiftilityPreview: String, CaseIterable, Preview {
-    
-    case BDPresentationSheet
-    
-    var name: String {
-        rawValue
-    }
-    
-    var content: AnyView {
-        switch self {
-        case .BDPresentationSheet: return AnyView(PresentationSheetPreview())
+        case .BDPresentationItem: return AnyView(PresentationItemPreview())
         }
     }
 }

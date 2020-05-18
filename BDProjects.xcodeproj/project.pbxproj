@@ -86,7 +86,6 @@
 				B4DB5BDF24450A49003764B6 /* AppDelegate.swift */,
 				B4DB5BE124450A49003764B6 /* SceneDelegate.swift */,
 				B4DB5BE324450A49003764B6 /* ContentView.swift */,
-				B4DB5C2724454E0D003764B6 /* BDSwiftility Preview */,
 				B4DB5BF824450B3E003764B6 /* BDUIKnit Preview */,
 				B4DB5BF724450B36003764B6 /* Utility */,
 				B4DB5BE524450A4A003764B6 /* Assets.xcassets */,
@@ -132,16 +131,9 @@
 				B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */,
 				B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */,
 				B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */,
-			);
-			path = "BDUIKnit Preview";
-			sourceTree = "<group>";
-		};
-		B4DB5C2724454E0D003764B6 /* BDSwiftility Preview */ = {
-			isa = PBXGroup;
-			children = (
 				B4DB5C2824454E32003764B6 /* PresentationSheetPreview.swift */,
 			);
-			path = "BDSwiftility Preview";
+			path = "BDUIKnit Preview";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
