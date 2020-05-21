@@ -18,6 +18,7 @@ struct ModalTextViewPreview: View {
     @State private var presentSheet = false
     @State private var presentWithKeyboard = true
     @State private var characterLimit = ""
+    @State private var commitButtonTitle = ""
     
     
     var body: some View {
@@ -53,6 +54,8 @@ struct ModalTextViewPreview: View {
                     })
             }
             
+            TextField("Commit Button Title", text: $commitButtonTitle)
+            
             Section(header: Text("TEXT VIEW")) {
                 Button(action: presentModalTextView) {
                     Text(todo.note)
@@ -84,6 +87,8 @@ struct ModalTextViewPreview: View {
             self.textViewModel.isFirstResponder = false
             self.presentSheet = false
         }
+        
+        textViewModel.commitButtonTitle = commitButtonTitle.isEmpty ? "Done" : commitButtonTitle
         
         textViewModel.isFirstResponder = presentWithKeyboard
         presentSheet = true

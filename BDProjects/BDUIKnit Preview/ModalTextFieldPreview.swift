@@ -17,6 +17,8 @@ struct ModalTextFieldPreview: View {
     @State private var textFieldModel = BDModalTextFieldModel()
     @State private var presentSheet = false
     @State private var presentWithKeyboard = true
+    @State private var showCharacterLimit = false
+    @State private var commitButtonTitle = ""
     
     let colors: [String: UIColor] = [
         "Purple": .systemPurple,
@@ -35,8 +37,10 @@ struct ModalTextFieldPreview: View {
                 }
                 .foregroundColor(.primary)
             }
-            Toggle("Show Clear Button", isOn: $textFieldModel.showClearTokenIndicator)
+            Toggle("Show Character Limit", isOn: $showCharacterLimit)
+            Toggle("Show Token Clear Button", isOn: $textFieldModel.showClearTokenIndicator)
             Toggle("Present with Keyboard", isOn: $presentWithKeyboard)
+            TextField("Commit Button Title", text: $commitButtonTitle)
         }
         .sheet(isPresented: $presentSheet) {
             BDModalTextField(viewModel: self.$textFieldModel)
@@ -88,6 +92,11 @@ struct ModalTextFieldPreview: View {
         textFieldModel.configure = { textField in
             textField.autocapitalizationType = .none
         }
+        
+        textFieldModel.characterLimit = showCharacterLimit ? 40 : nil
+        textFieldModel.characterLimitColor = .primary
+        textFieldModel.characterLimitWarningColor = .red
+        textFieldModel.commitButtonTitle = commitButtonTitle.isEmpty ? "Done" : commitButtonTitle
         
         textFieldModel.isFirstResponder = presentWithKeyboard
         presentSheet = true
