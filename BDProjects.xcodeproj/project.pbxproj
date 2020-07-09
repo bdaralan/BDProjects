@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4147EEC2453C4BE0022855A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4147EEB2453C4BE0022855A /* Todo.swift */; };
 		B426868D24468EB600E6D0A8 /* ModalTextViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */; };
+		B4315E2824B7975E003860E4 /* DividerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4315E2724B7975E003860E4 /* DividerPreview.swift */; };
 		B45D386C245D032A000D4975 /* TextViewWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */; };
 		B45D386E245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */; };
 		B479E58F2465CC410046AA0A /* PersistPropertyWrapperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		B4147EEB2453C4BE0022855A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B426868C24468EB600E6D0A8 /* ModalTextViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTextViewPreview.swift; sourceTree = "<group>"; };
+		B4315E2724B7975E003860E4 /* DividerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerPreview.swift; sourceTree = "<group>"; };
 		B45D386B245D032A000D4975 /* TextViewWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapperPreview.swift; sourceTree = "<group>"; };
 		B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperSegmentControlPreview.swift; sourceTree = "<group>"; };
 		B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistPropertyWrapperPreview.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				B45D386D245D1424000D4975 /* UIViewWrapperSegmentControlPreview.swift */,
 				B479E58E2465CC410046AA0A /* PersistPropertyWrapperPreview.swift */,
 				B4DB5C2824454E32003764B6 /* PresentationSheetPreview.swift */,
+				B4315E2724B7975E003860E4 /* DividerPreview.swift */,
 			);
 			path = "BDUIKnit Preview";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				B4DB5BFB24450B5E003764B6 /* PreviewPresenter.swift in Sources */,
 				B4DB5BFF24450B66003764B6 /* ButtonTrayViewPreview.swift in Sources */,
 				B4DB5C2924454E32003764B6 /* PresentationSheetPreview.swift in Sources */,
+				B4315E2824B7975E003860E4 /* DividerPreview.swift in Sources */,
 				B45D386C245D032A000D4975 /* TextViewWrapperPreview.swift in Sources */,
 				B4985919245368A600BD0225 /* TextFieldWrapperPreview.swift in Sources */,
 			);
