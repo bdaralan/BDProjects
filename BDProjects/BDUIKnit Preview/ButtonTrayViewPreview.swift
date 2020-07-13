@@ -23,23 +23,28 @@ struct ButtonTrayViewPreview: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: true) {
-                VStack(spacing: 16) {
-                    ForEach(0..<9) { number in
-                        Rectangle()
-                            .fill(Color(UIColor.tertiarySystemFill))
-                            .frame(height: 150)
-                            .cornerRadius(15)
+            ZStack {
+                ScrollView(.vertical, showsIndicators: true) {
+                    VStack(spacing: 16) {
+                        ForEach(0..<9) { number in
+                            Rectangle()
+                                .fill(Color(UIColor.tertiarySystemFill))
+                                .frame(height: 150)
+                                .cornerRadius(15)
+                        }
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 16)
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
+                
+                BDButtonTrayView(viewModel: trayViewModel)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                    .padding(20)
             }
             .navigationBarTitle(navigationTitle)
-            .overlay(BDButtonTrayView(viewModel: trayViewModel).padding(20), alignment: .bottomTrailing)
+            .onAppear(perform: setupTrayViewModel)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: setupTrayViewModel)
     }
     
     func setupTrayViewModel() {
